@@ -9,31 +9,29 @@ console.log(userAge);
 // Calcolare il prezzo totale del viaggio
     // -prezzo del biglietto 0.21€ al km
 const priceTiket = travelKm * 0.21;
-console.log(priceTiket);
+console.log(`prezzo base: ${priceTiket}`);
 
 // Calcolare lo sconto in base al passeggero
 let discount;
+let finalPrice;
 
 if (userAge < 18) {
     discount = (priceTiket * 20 / 100);  
 } else if (userAge > 65) {
     discount = (priceTiket * 45 / 100);
 } else {
-    discount = "Non c'è nessuno sconto da applicare"
+    discount = 0
 }
-console.log(discount);
+console.log(`sconto: ${discount}`);
+ 
+// Sottrare lo sconto al prezzo pieno
+finalPrice = priceTiket - discount;
+console.log(finalPrice);
 
-// Sottrarre lo sconto dal prezzo intero
-let discountedPrice; 
+// Creare il messaggio da visualizzare
+const message = `Il prezzo del biglietto è di : ${finalPrice}€`;
+console.log(`prezzo finale: ${finalPrice}`);
 
-if (userAge < 18) {
-    discountedPrice = priceTiket - discount;
-} else if (userAge > 65) {
-    discountedPrice = priceTiket - discount;
-}
-console.log(discountedPrice);
-
-const message = `il prezzo del biglietto è di : $(discountedPrice)`;
 // Stampare il prezzo finale in html
 document.getElementById('price').innerHTML = message;
 
