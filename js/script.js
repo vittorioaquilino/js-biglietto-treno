@@ -1,14 +1,14 @@
 // Chiedere all'utente i km da percorrere
-const travelKm = parseInt(prompt("Quanti chilometri vuoi percorrere"));
+const travelKm = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
 console.log(travelKm);
 
 // Chiedere all'utente l'età
-const userAge = parseInt(prompt("Quanti anni hai"));
+const userAge = parseInt(prompt("Quanti anni hai?"));
 console.log(userAge);
 
 // Calcolare il prezzo totale del viaggio
     // -prezzo del biglietto 0.21€ al km
-const priceTiket = travelKm * 0.21;
+let priceTiket = travelKm * 0.21;
 console.log(`prezzo base: ${priceTiket}`);
 
 // Calcolare lo sconto in base al passeggero
@@ -29,7 +29,7 @@ finalPrice = priceTiket - discount;
 console.log(finalPrice);
 
 // Creare il messaggio da visualizzare
-const message = `Il prezzo del biglietto è di : ${finalPrice}€`;
+const message = `Il prezzo del biglietto è di: €${finalPrice.toFixed(2)}`;
 console.log(`prezzo finale: ${finalPrice}`);
 
 // Stampare il prezzo finale in html
